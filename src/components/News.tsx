@@ -1,17 +1,19 @@
 import { Calendar, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { newsItems } from '../data/newsData';
+import { useTranslation } from 'react-i18next';
+
 
 export default function News() {
+  const { t } = useTranslation();
   return (
     <section id="news" className="py-20 bg-gradient-to-b from-white to-slate-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
-            آخر الأخبار
-          </h2>
+            {t('lastNews')}        </h2>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-            ابق على اطلاع بأحدث إعلاناتنا وإنجازاتنا ورؤى الصناعة
+            {t('last_news_description')}
           </p>
         </div>
 

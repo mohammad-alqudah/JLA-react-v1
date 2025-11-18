@@ -2,5 +2,15 @@
       "welcome": "Welcome to React and react-i18next"
        ,
       "contact": "Contact us",
-      "contact_message": "Have questions? We love to hear from you. Send us a message and we'll get back to you as soon as possible."
+      "contact_message": "Have questions? We love to hear from you. Send us a message and we'll get back to you as soon as possible.",
+      "ourcourses": "Our Training Courses",
+      "course_description": "Explore a wide range of specialized training courses in the field of logistics and supply chain management.",
+      "lastNews": "Latest News",
+      "last_news_description": "Stay updated with our latest announcements, achievements, and industry insights."
+      ,
+      "Decleartion": "Who is the Jordanian Logistics Union",
+      "decleartion_paragraph1": "The Jordanian Logistics Union is a non-governmental organization specializing in providing logistics services in the region. We aim to facilitate the supply process and improve the customer experience.",
+      "decleartion_paragraph2": "Since the establishment of the union, there has been continuous support and backing from official and public entities, as well as the International Federation of Freight Forwarders Associations (FIATA).",
+      "decleartion_paragraph3": "The Jordanian Logistics Union is part of a larger regional logistics organization in Jordan, which is a non-governmental organization focused on logistics services in the region. We aim to simplify the supply process and enhance customer satisfaction."
+
     }

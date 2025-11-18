@@ -1,4 +1,5 @@
 import { BookOpen, Clock, Users, Award } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const courses = [
   {
@@ -58,15 +59,16 @@ const courses = [
 ];
 
 export default function Courses() {
+    const { t } = useTranslation();
   return (
     <section id="courses" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
-            دوراتنا التدريبية
-          </h2>
+            {t('ourcourses')}
+               </h2>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-            اكتشف مجموعة واسعة من الدورات التدريبية المتخصصة في مجال اللوجستيات وسلسلة التوريد
+      {t('course_description')}
           </p>
         </div>
 
