@@ -1,9 +1,13 @@
 import { Menu, X, LogIn, UserPlus, LogOut, User } from 'lucide-react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Link, useLocation } from 'react-router-dom';
+
 // import { useAuth } from '../contexts/AuthContext';
 
 export default function Navbar() {
+   const [language, setLanguage] = useState("ar")
+  const { t , i18n } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   // const { user, signOut } = useAuth();
   const location = useLocation();
@@ -15,6 +19,22 @@ export default function Navbar() {
     'الأخبار': 'news',
     'اتصل بنا': 'contact'
   };
+  const changeLanguage = () => {
+    if (language == "en") {
+      setLanguage("ar");
+      i18n.changeLanguage("ar");
+    }else{
+      setLanguage("en");
+      i18n.changeLanguage("en");
+    }
+    
+    console.log(language)
+    
+    document.dir = language === 'ar' ? 'rtl' : 'ltr';
+  };
+  useEffect(()=>{
+    i18n.changeLanguage(language);
+  },[])
 
   const scrollToSection = (section: string) => {
     if (location.pathname !== '/') {
@@ -54,11 +74,11 @@ export default function Navbar() {
               ))}
             </div>
             <div className="flex items-center gap-2 mr-4">
-              {/* {user ? (
+              {true ? (
                 <div className="flex items-center gap-2">
                   <div className="flex items-center gap-2 px-3 py-2 bg-slate-100 rounded-lg">
                     <User size={18} className="text-slate-600" />
-                    <span className="text-sm text-slate-600">{user.email}</span>
+                    <span className="text-sm text-slate-600">user@gmail.com</span>
                   </div>
                   <button
                     onClick={handleSignOut}
@@ -67,7 +87,17 @@ export default function Navbar() {
                     <LogOut size={18} />
                     <span>تسجيل الخروج</span>
                   </button>
+                
+                   <button onClick={() => changeLanguage()} className=" px-2 py-1 bg-slate-100 rounded-lg ">
+                    {language=="en"?"Arabic":"الإنجليزية"}
+
+                   </button>
+                  
+                
+                 {/* {language=="en"&& <button className=" px-2 py-1 bg-slate-100 rounded-lg " onClick={() => changeLanguage('en')} >English</button>} */}
+                  
                 </div>
+                
               ) : (
                 <>
                   <Link
@@ -85,7 +115,7 @@ export default function Navbar() {
                     <span>التسجيل كعضو</span>
                   </Link>
                 </>
-              )} */}
+              )}
             </div>
           </div>
 
@@ -128,6 +158,7 @@ export default function Navbar() {
                     <LogOut size={18} />
                     <span>تسجيل الخروج</span>
                   </button>
+                  
                 </>
               ) : (
                 <>
@@ -143,9 +174,20 @@ export default function Navbar() {
                     className="flex items-center justify-center gap-2 px-4 py-2 text-slate-600 hover:text-slate-900 border border-slate-300 rounded-lg hover:border-slate-400 transition-colors duration-200"
                   >
                     <UserPlus size={18} />
-                    <span>التسجيل كعضو</span>
+                    <span >التسجيل كعضو</span>
                   </Link>
+                   {/* {
+                    language=="ar"&& <button onClick={() => changeLanguage('ar')} className=" w-full gap-2 px-4 py-2 text-slate-600 hover:text-slate-900 border border-slate-300 rounded-lg hover:border-slate-400 transition-colors duration-200 ">عربى</button>
+                  }
+                
+                 {language=="en"&& <button className=" " onClick={() => changeLanguage('en')} >English</button>} */}
+                  <button onClick={() => changeLanguage()} className=" w-full gap-2 px-4 py-2 text-slate-600 hover:text-slate-900 border border-slate-300 rounded-lg hover:border-slate-400 transition-colors duration-200  ">
+                    {language=="en"?"Arabic":"الإنجليزية"}
+
+                   </button>
                 </>
+                
+                
               )}
             </div>
           </div>

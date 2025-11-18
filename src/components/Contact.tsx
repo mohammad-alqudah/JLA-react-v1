@@ -1,6 +1,7 @@
 
 import { MapPin, Phone, Mail, Clock, Send, MessageSquare } from 'lucide-react';
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -9,6 +10,7 @@ const Contact = () => {
     subject: '',
     message: ''
   });
+  const { t } = useTranslation();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -30,13 +32,14 @@ const Contact = () => {
     <div>
            <div className="text-center mb-3">
            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
- تواصل معنا
+ {t('contact')}
            </h2>
         <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-هل لديك أسئلة؟ نحن نحب أن نسمع منك. أرسل لنا رسالة وسنرد في أقرب وقت ممكن.
+{t('contact_message')}
         </p>
         </div>
       {/* Contact Form and Map */}
+      
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12">
@@ -44,14 +47,14 @@ const Contact = () => {
             <div className="bg-white p-8 rounded-lg shadow-lg">
               <div className="flex items-center mb-6">
                 <MessageSquare className="h-6 w-6 text-red-600 mr-3" />
-                <h2 className="text-2xl font-bold text-gray-900">Send us a Message</h2>
+                <h2 className="text-2xl font-bold text-gray-900 px-2 ">تواصل معنا</h2>
               </div>
               
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                      Full Name *
+                       الاسم الكامل*                        
                     </label>
                     <input
                       type="text"
@@ -66,7 +69,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                      Email Address *
+                      البريد الالكترونى *
                     </label>
                     <input
                       type="email"
@@ -83,7 +86,7 @@ const Contact = () => {
 
                 <div>
                   <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
-                    Subject *
+                    الموضوع *
                   </label>
                   <select
                     id="subject"
@@ -106,7 +109,7 @@ const Contact = () => {
 
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                    Message *
+                    الرسالة *
                   </label>
                   <textarea
                     id="message"
@@ -134,17 +137,17 @@ const Contact = () => {
             <div className="space-y-8">
               {/* Department Contacts */}
               <div className="bg-white p-8 rounded-lg shadow-lg">
-                <h3 className="text-xl font-semibold mb-4">Contact Information</h3>
+                <h3 className="text-xl font-semibold mb-4">معلومات الاتصال</h3>
                 <div className="space-y-3">
                   
                     <div  className=" flex justify-between items-center py-2 border-b border-gray-100 last:border-b-0">
-                      <span className="text-gray-700">Phone Number:</span>
+                      <span className="text-gray-700">زقم الهاتف:</span>
                       <span className="text-red-600 hover:text-red-700 text-sm">
                         00962-6-5658094
                       </span>
                     </div>
                     <div  className=" flex justify-between items-center py-2 border-b border-gray-100 last:border-b-0">
-                      <span className="text-gray-700">email :</span>
+                      <span className="text-gray-700">البريد الالكترونى:</span>
                       <span className="text-red-600 hover:text-red-700 text-sm">
                         info@jla.jo
                       </span>
@@ -154,7 +157,7 @@ const Contact = () => {
               </div>
                 {/* Map Placeholder */}
               <div className="bg-white p-8 rounded-lg shadow-lg">
-                <h3 className="text-xl font-semibold mb-4">Our Location</h3>
+                <h3 className="text-xl font-semibold mb-4">موقع الجمعية</h3>
                 <div className="bg-gray-200 rounded-lg h-64 flex items-center justify-center mb-4 overflow-hidden">
                  <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1692.0779316010846!2d35.898973!3d31.98379!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151ca118a33aadcb%3A0xf7d86619c29b3cc3!2sJordanian%20Logistics%20Association!5e0!3m2!1sen!2sjo!4v1763403486012!5m2!1sen!2sjo" width={600} height={450} style={{border: 0}} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" />
 
