@@ -12,10 +12,12 @@ import AbdullahJoubor from '../assets/AbdullahJoubor.jpg';
 import ramy from '../assets/ramy.jpg';
 import image1 from '../assets/WhatsApp Image 2023-06-15 at 1-14-31 PM.jpeg';
 import image2 from '../assets/New Microsoft Word Document-pdf - Adobe Acrobat Reader -64-b.png';
+import { useTranslation } from 'react-i18next';
 
 
 
 const About = () => {
+  const { t } = useTranslation();
   const milestones = [
     { year: '2009', event: 'JLA Founded', description: 'Established to unite Jordan\'s logistics professionals' },
     { year: '2012', event: 'First Certification Program', description: 'Launched professional development initiatives' },
@@ -58,10 +60,10 @@ const About = () => {
       bio: 'RIXOS LOGISTICS'
     },
     {
-        
+
       name: 'Mr.Marwan Owais',
       position: 'Board Member',
-      image:marwan ,
+      image: marwan,
       bio: 'Grand Arabia Forwarding & Logistic Services'
     },
     {
@@ -71,14 +73,14 @@ const About = () => {
       bio: 'Jordan Logistics Association (JLA)'
     },
     {
-      
+
       name: 'Mr.Mohammad Ajlouni',
       position: 'Board Member',
       image: mohamed,
       bio: 'Al Nahrain Transportation & Marine Services'
     },
     {
-    
+
       name: 'Mr.Nizar Saleh',
       position: 'Charman-President',
       image: nizar,
@@ -94,14 +96,14 @@ const About = () => {
 
   return (
     <>
-        <Navbar/>
+      <Navbar />
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-red-600 to-green-600 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10">
           <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">About JLA</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">{t("about.title")}</h1>
             <p className="text-xl md:text-2xl max-w-3xl mx-auto">
-              Leading Jordan's logistics industry towards excellence, innovation, and sustainable growth
+              {t("about.subtitle")}
             </p>
           </div>
         </div>
@@ -115,10 +117,9 @@ const About = () => {
               <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Target className="h-8 w-8 text-red-600" />
               </div>
-              <h3 className="text-2xl font-bold mb-4">Our Mission</h3>
+              <h3 className="text-2xl font-bold mb-4">{t("missions.title")}</h3>
               <p className="text-gray-600">
-                To advance the logistics industry in Jordan through professional development, 
-                industry standards, and collaborative partnerships that drive economic growth.
+                {t("missions.description")}
               </p>
             </div>
 
@@ -126,10 +127,9 @@ const About = () => {
               <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Eye className="h-8 w-8 text-green-600" />
               </div>
-              <h3 className="text-2xl font-bold mb-4">Our Vision</h3>
+              <h3 className="text-2xl font-bold mb-4">{t("vision.title")}</h3>
               <p className="text-gray-600">
-                To position Jordan as the leading logistics hub in the Middle East, 
-                connecting continents and facilitating global trade.
+                {t("vision.description")}
               </p>
             </div>
 
@@ -137,22 +137,25 @@ const About = () => {
               <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Award className="h-8 w-8 text-blue-600" />
               </div>
-              <h3 className="text-2xl font-bold mb-4">Our Values</h3>
+              <h3 className="text-2xl font-bold mb-4">{t("value.title")}</h3>
               <p className="text-gray-600">
-                Excellence, integrity, innovation, and collaboration guide everything we do 
-                as we serve our members and the logistics community.
+                {t("value.description")}
               </p>
             </div>
           </div>
         </div>
       </section>
 
-       {/* Leadership Team */}
+      {/* Leadership Team */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Leadership Team</h2>
-            <p className="text-xl text-gray-600">Meet the leaders driving JLA's mission forward</p>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              {t("leadership.title")}
+            </h2>
+            <p className="text-xl text-gray-600">
+              {t("leadership.subtitle")}
+            </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -161,7 +164,7 @@ const About = () => {
                 <img
                   src={leader.image}
                   alt={leader.name}
-                  className="w-32 h-32 rounded-full mx-auto mb-4 object-cover"
+                  className="w-32 h-32 rounded-full mx-auto mb-4 object-contain"
                 />
                 <h3 className="text-xl font-semibold mb-2">{leader.name}</h3>
                 <p className="text-red-600 font-medium mb-3">{leader.position}</p>
@@ -179,8 +182,12 @@ const About = () => {
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Journey</h2>
-            <p className="text-xl text-gray-600">Key milestones in JLA's development</p>
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+  {t("journey.title")}
+</h2>
+<p className="text-xl text-gray-600">
+  {t("journey.subtitle")}
+</p>
           </div>
 
           <div className="relative">
@@ -206,14 +213,14 @@ const About = () => {
         </div>
       </section>
 
-     
 
-      
 
-     
-      <Footer/>
+
+
+
+      <Footer />
     </>
-    
+
   );
 };
 

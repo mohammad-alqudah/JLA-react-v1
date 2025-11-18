@@ -299,8 +299,8 @@ export default function Register() {
                 </div>
               )}
 
-              {/* {step === 1 && (
-                <form onSubmit={handleAuthSubmit} className="space-y-6">
+               {true && (
+                <form  className="space-y-6">
                   <h2 className="text-2xl font-bold text-slate-900 mb-6">إنشاء حساب</h2>
 
                   <div>
@@ -310,8 +310,8 @@ export default function Register() {
                     <input
                       type="email"
                       required
-                      value={authData.email}
-                      onChange={(e) => setAuthData({ ...authData, email: e.target.value })}
+                      // value={authData.email}
+                      // onChange={(e) => setAuthData({ ...authData, email: e.target.value })}
                       className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-red-600 focus:border-transparent"
                       dir="ltr"
                     />
@@ -324,8 +324,8 @@ export default function Register() {
                     <input
                       type="password"
                       required
-                      value={authData.password}
-                      onChange={(e) => setAuthData({ ...authData, password: e.target.value })}
+                      // value={authData.password}
+                      // onChange={(e) => setAuthData({ ...authData, password: e.target.value })}
                       className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-red-600 focus:border-transparent"
                     />
                   </div>
@@ -337,22 +337,22 @@ export default function Register() {
                     <input
                       type="password"
                       required
-                      value={authData.confirmPassword}
-                      onChange={(e) => setAuthData({ ...authData, confirmPassword: e.target.value })}
+                      // value={authData.confirmPassword}
+                      // onChange={(e) => setAuthData({ ...authData, confirmPassword: e.target.value })}
                       className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-red-600 focus:border-transparent"
                     />
                   </div>
 
                   <button
                     type="submit"
-                    disabled={loading}
+                    disabled={false}
                     className="w-full bg-red-600 text-white py-3 rounded-lg font-medium hover:bg-red-700 transition-colors duration-200 disabled:opacity-50"
                   >
-                    {loading ? 'جاري الإنشاء...' : 'التالي'}
+                    {false ? 'جاري الإنشاء...' : 'التالي'}
                   </button>
                 </form>
               )}
-
+{/*
               {step === 2 && (
                 <form onSubmit={(e) => { e.preventDefault(); setStep(3); }} className="space-y-6">
                   <h2 className="text-2xl font-bold text-slate-900 mb-6">بيانات الشركة</h2>

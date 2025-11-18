@@ -12,12 +12,12 @@ export default function Navbar() {
   // const { user, signOut } = useAuth();
   const location = useLocation();
 
-  const navItems = ['الرئيسية', 'الدورات', 'الأخبار', 'اتصل بنا'];
+  const navItems = [t('home'),t('courses'),t('news'),t('contactUs')];
   const navItemsMap: { [key: string]: string } = {
-    'الرئيسية': 'home',
-    'الدورات': 'courses',
-    'الأخبار': 'news',
-    'اتصل بنا': 'contact'
+    home:t('home'),
+     courses: t('courses'),
+    news:t('news'),
+    contact:t('contactUs')
   };
   const changeLanguage = () => {
     if (language == "en") {
@@ -85,7 +85,7 @@ export default function Navbar() {
                     className="flex items-center gap-2 px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors duration-200"
                   >
                     <LogOut size={18} />
-                    <span>تسجيل الخروج</span>
+                    <span>{t('signOut')}</span>
                   </button>
                 
                    <button onClick={() => changeLanguage()} className=" px-2 py-1 bg-slate-100 rounded-lg ">
@@ -156,7 +156,7 @@ export default function Navbar() {
                     className="w-full flex items-center justify-center gap-2 px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors duration-200"
                   >
                     <LogOut size={18} />
-                    <span>تسجيل الخروج</span>
+                    <span>{t('signOut')}</span>
                   </button>
                   
                 </>
@@ -176,11 +176,8 @@ export default function Navbar() {
                     <UserPlus size={18} />
                     <span >التسجيل كعضو</span>
                   </Link>
-                   {/* {
-                    language=="ar"&& <button onClick={() => changeLanguage('ar')} className=" w-full gap-2 px-4 py-2 text-slate-600 hover:text-slate-900 border border-slate-300 rounded-lg hover:border-slate-400 transition-colors duration-200 ">عربى</button>
-                  }
-                
-                 {language=="en"&& <button className=" " onClick={() => changeLanguage('en')} >English</button>} */}
+                  
+    
                   <button onClick={() => changeLanguage()} className=" w-full gap-2 px-4 py-2 text-slate-600 hover:text-slate-900 border border-slate-300 rounded-lg hover:border-slate-400 transition-colors duration-200  ">
                     {language=="en"?"Arabic":"الإنجليزية"}
 

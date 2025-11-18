@@ -1,29 +1,31 @@
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 
+
+export default function Slider() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const { t } = useTranslation();
+  
 const slides = [
   {
     id: 1,
-    title: 'مرحباً بكم في منصتنا',
-    description: 'اكتشف حلولاً مذهلة لاحتياجات عملك',
+    title:t('slide1_title') ,
+    description: t('slide1_description'),
     image: 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop',
   },
   {
-    id: 2,
-    title: 'الابتكار في أفضل صوره',
-    description: 'نقود الطريق بالتكنولوجيا المتطورة',
+    id: 2,   title:t('slide2_title') ,
+    description: t('slide2_description'),
     image: 'https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop',
   },
   {
     id: 3,
-    title: 'التميز في الخدمة',
-    description: 'ملتزمون بتقديم نتائج استثنائية',
+    title: t('slide3_title') ,
+    description: t('slide3_description'),
     image: 'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop',
   },
 ];
-
-export default function Slider() {
-  const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
     const timer = setInterval(() => {

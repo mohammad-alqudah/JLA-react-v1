@@ -1,7 +1,10 @@
 import { Link } from 'react-router-dom';
-import { MapPin, Phone, Mail, Facebook, Twitter, Linkedin } from 'lucide-react';
+import { MapPin, Phone, Mail, Facebook, Twitter, Linkedin, X, Instagram } from 'lucide-react';
+import { t, use } from 'i18next';
+import { useTranslation } from 'react-i18next';
 
 export default function Footer() {
+  const { t } = useTranslation();
   return (
     <footer className="bg-gray-900 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -20,49 +23,48 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-gray-300 mb-4 max-w-md">
-              Advancing Jordan's logistics sector through professional development, 
-              industry standards, and collaborative partnerships.
+              {t('footer')}
             </p>
-            <div className="flex space-x-4">
+            <div className="flex items-center gap-5">
               <a href="#" className="text-gray-400 hover:text-white transition-colors">
                 <Facebook className="h-5 w-5" />
               </a>
               <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Twitter className="h-5 w-5" />
+                <Instagram className="h-5 w-5" />
               </a>
               <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Linkedin className="h-5 w-5" />
+                <Twitter className="h-5 w-5" />
               </a>
             </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
+            <h4 className="text-lg font-semibold mb-4">{t('Quick Links')}</h4>
             <ul className="space-y-2">
               <li>
+              <li>
+                <Link to="/" className="text-gray-300 hover:text-white transition-colors">
+                  {t('home')}
+                </Link>
+              </li>
                 <Link to="/about" className="text-gray-300 hover:text-white transition-colors">
-                  About Us
+                  {t('aboutUs')}
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="text-gray-300 hover:text-white transition-colors">
-                  Services
+                <Link to="/all-news" className="text-gray-300 hover:text-white transition-colors">
+                  {t('news')}
                 </Link>
               </li>
               <li>
-                <Link to="/news" className="text-gray-300 hover:text-white transition-colors">
-                  News & Events
+                <Link to="/login" className="text-gray-300 hover:text-white transition-colors">
+                  {t(' Login')}
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="text-gray-300 hover:text-white transition-colors">
-                  Contact
-                </Link>
-              </li>
-              <li>
-                <Link to="/member-login" className="text-gray-300 hover:text-white transition-colors">
-                  Member Portal
+                <Link to="/register" className="text-gray-300 hover:text-white transition-colors">
+                  {t('Register')}
                 </Link>
               </li>
             </ul>
@@ -70,7 +72,7 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">Contact Info</h4>
+            <h4 className="text-lg font-semibold mb-4">{t('contactUs')}</h4>
             <div className="space-y-3">
               <div className="flex items-start space-x-3">
                 <MapPin className="h-5 w-5 text-red-500 mt-0.5 flex-shrink-0" />

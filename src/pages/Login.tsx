@@ -5,8 +5,11 @@ import { LogIn, Mail, Lock } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+
 
 export default function Login() {
+   const { t } = useTranslation();
   // const [email, setEmail] = useState('');
   // const [password, setPassword] = useState('');
   // const [error, setError] = useState('');
@@ -40,7 +43,7 @@ export default function Login() {
               <div className="flex items-center justify-center gap-3">
                 <LogIn className="text-white" size={32} />
                 <h1 className="text-3xl font-bold text-white text-center">
-                  تسجيل الدخول
+                  {t("login_page.title")}
                 </h1>
               </div>
             </div>
@@ -55,7 +58,7 @@ export default function Login() {
               <form className="space-y-6">
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-2">
-                    البريد الإلكتروني
+                    {t("login_page.email_label")}
                   </label>
                   <div className="relative">
                     <Mail className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400" size={20} />
@@ -73,7 +76,7 @@ export default function Login() {
 
                 <div>
                   <label htmlFor="password" className="block text-sm font-medium text-slate-700 mb-2">
-                    كلمة المرور
+                    {t("login_page.password_label")}
                   </label>
                   <div className="relative">
                     <Lock className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400" size={20} />
@@ -84,7 +87,7 @@ export default function Login() {
                       value={""}
                       
                       className="w-full pr-10 pl-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-red-600 focus:border-transparent"
-                      placeholder="••••••••"
+                      placeholder={t("login_page.password_placeholder")}
                     />
                   </div>
                 </div>
@@ -94,17 +97,17 @@ export default function Login() {
                   disabled={false}
                   className="w-full bg-red-600 text-white py-3 rounded-lg font-medium hover:bg-red-700 transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  {false? 'جاري تسجيل الدخول...' : 'تسجيل الدخول'}
+                  {false ? t("login_page.logging_in") : t("login_page.login_button")}
                 </button>
               </form>
 
               <div className="mt-6 text-center">
-                <p className="text-slate-600">
-                  ليس لديك حساب؟{' '}
-                  <Link to="/register" className="text-red-600 hover:text-red-700 font-medium">
-                    التسجيل كعضو
-                  </Link>
-                </p>
+               <p>
+  {t("login_page.no_account")}{" "}
+  <Link to="/register" className="text-red-600 hover:text-red-700 font-medium">
+    {t("login_page.register_link")}
+  </Link>
+</p>
               </div>
             </div>
           </div>
