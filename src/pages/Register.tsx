@@ -1,250 +1,250 @@
-import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../contexts/AuthContext';
-import { supabase } from '../lib/supabase';
-import { UserPlus, Upload, CheckCircle } from 'lucide-react';
+// import { useState, useEffect } from 'react';
+// import { useNavigate } from 'react-router-dom';
+// import { useAuth } from '../contexts/AuthContext';
+
+// import { UserPlus, Upload, CheckCircle } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
 export default function Register() {
-  const [step, setStep] = useState(1);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState('');
-  const [success, setSuccess] = useState(false);
-  const { signUp, user } = useAuth();
-  const navigate = useNavigate();
+  // const [step, setStep] = useState(1);
+  // const [loading, setLoading] = useState(false);
+  // const [error, setError] = useState('');
+  // const [success, setSuccess] = useState(false);
+  // const { signUp, user } = useAuth();
+  // const navigate = useNavigate();
 
-  const [authData, setAuthData] = useState({
-    email: '',
-    password: '',
-    confirmPassword: '',
-  });
+  // const [authData, setAuthData] = useState({
+  //   email: '',
+  //   password: '',
+  //   confirmPassword: '',
+  // });
 
-  const [formData, setFormData] = useState({
-    company_name_ar: '',
-    company_name_en: '',
-    registration_number: '',
-    company_type: '',
-    authorized_person_name: '',
-    national_id: '',
-    capital: '',
-    years_experience: 0,
-    city: '',
-    district: '',
-    mobile: '',
-    email: '',
-    phone: '',
-    fax: '',
-    branches_domestic: '',
-    branches_international: '',
-    license: '',
-    trucks_count: 0,
-    storage_area: '',
-    employees_land_shipping: 0,
-    employees_clearance: 0,
-    employees_sea_shipping: 0,
-    employees_air_shipping: 0,
-    employees_logistics: 0,
-    employees_express_mail: 0,
-    employees_other: 0,
-    represents_companies: '',
-    union_member_references: '',
-    other_memberships: '',
-    info_confirmed: false,
-  });
+  // const [formData, setFormData] = useState({
+  //   company_name_ar: '',
+  //   company_name_en: '',
+  //   registration_number: '',
+  //   company_type: '',
+  //   authorized_person_name: '',
+  //   national_id: '',
+  //   capital: '',
+  //   years_experience: 0,
+  //   city: '',
+  //   district: '',
+  //   mobile: '',
+  //   email: '',
+  //   phone: '',
+  //   fax: '',
+  //   branches_domestic: '',
+  //   branches_international: '',
+  //   license: '',
+  //   trucks_count: 0,
+  //   storage_area: '',
+  //   employees_land_shipping: 0,
+  //   employees_clearance: 0,
+  //   employees_sea_shipping: 0,
+  //   employees_air_shipping: 0,
+  //   employees_logistics: 0,
+  //   employees_express_mail: 0,
+  //   employees_other: 0,
+  //   represents_companies: '',
+  //   union_member_references: '',
+  //   other_memberships: '',
+  //   info_confirmed: false,
+  // });
 
-  const [files, setFiles] = useState({
-    registration_certificate: null as File | null,
-    profession_license: null as File | null,
-    license_photo: null as File | null,
-    id_photo: null as File | null,
-    criminal_record: null as File | null,
-    academic_certificate: null as File | null,
-  });
+  // const [files, setFiles] = useState({
+  //   registration_certificate: null as File | null,
+  //   profession_license: null as File | null,
+  //   license_photo: null as File | null,
+  //   id_photo: null as File | null,
+  //   criminal_record: null as File | null,
+  //   academic_certificate: null as File | null,
+  // });
 
-  useEffect(() => {
-    const total =
-      formData.employees_land_shipping +
-      formData.employees_clearance +
-      formData.employees_sea_shipping +
-      formData.employees_air_shipping +
-      formData.employees_logistics +
-      formData.employees_express_mail +
-      formData.employees_other;
+  // useEffect(() => {
+  //   const total =
+  //     formData.employees_land_shipping +
+  //     formData.employees_clearance +
+  //     formData.employees_sea_shipping +
+  //     formData.employees_air_shipping +
+  //     formData.employees_logistics +
+  //     formData.employees_express_mail +
+  //     formData.employees_other;
 
-    setFormData(prev => ({ ...prev, employees_total: total }));
-  }, [
-    formData.employees_land_shipping,
-    formData.employees_clearance,
-    formData.employees_sea_shipping,
-    formData.employees_air_shipping,
-    formData.employees_logistics,
-    formData.employees_express_mail,
-    formData.employees_other,
-  ]);
+  //   setFormData(prev => ({ ...prev, employees_total: total }));
+  // }, [
+  //   formData.employees_land_shipping,
+  //   formData.employees_clearance,
+  //   formData.employees_sea_shipping,
+  //   formData.employees_air_shipping,
+  //   formData.employees_logistics,
+  //   formData.employees_express_mail,
+  //   formData.employees_other,
+  // ]);
 
-  const handleAuthSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setError('');
+  // const handleAuthSubmit = async (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   setError('');
 
-    if (authData.password !== authData.confirmPassword) {
-      setError('كلمات المرور غير متطابقة');
-      return;
-    }
+  //   if (authData.password !== authData.confirmPassword) {
+  //     setError('كلمات المرور غير متطابقة');
+  //     return;
+  //   }
 
-    if (authData.password.length < 6) {
-      setError('كلمة المرور يجب أن تكون 6 أحرف على الأقل');
-      return;
-    }
+  //   if (authData.password.length < 6) {
+  //     setError('كلمة المرور يجب أن تكون 6 أحرف على الأقل');
+  //     return;
+  //   }
 
-    setLoading(true);
-    const { error } = await signUp(authData.email, authData.password);
+  //   setLoading(true);
+  //   const { error } = await signUp(authData.email, authData.password);
 
-    if (error) {
-      setError(error.message);
-      setLoading(false);
-    } else {
-      setFormData(prev => ({ ...prev, email: authData.email }));
-      setStep(2);
-      setLoading(false);
-    }
-  };
+  //   if (error) {
+  //     setError(error.message);
+  //     setLoading(false);
+  //   } else {
+  //     setFormData(prev => ({ ...prev, email: authData.email }));
+  //     setStep(2);
+  //     setLoading(false);
+  //   }
+  // };
 
-  const uploadFile = async (file: File, bucket: string, path: string) => {
-    const { data, error } = await supabase.storage
-      .from(bucket)
-      .upload(path, file, {
-        upsert: true,
-      });
+  // const uploadFile = async (file: File, bucket: string, path: string) => {
+  //   const { data, error } = await supabase.storage
+  //     .from(bucket)
+  //     .upload(path, file, {
+  //       upsert: true,
+  //     });
 
-    if (error) throw error;
+  //   if (error) throw error;
 
-    const { data: { publicUrl } } = supabase.storage
-      .from(bucket)
-      .getPublicUrl(path);
+  //   const { data: { publicUrl } } = supabase.storage
+  //     .from(bucket)
+  //     .getPublicUrl(path);
 
-    return publicUrl;
-  };
+  //   return publicUrl;
+  // };
 
-  const handleFinalSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setError('');
+  // const handleFinalSubmit = async (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   setError('');
 
-    if (!formData.info_confirmed) {
-      setError('يجب تأكيد صحة المعلومات');
-      return;
-    }
+  //   if (!formData.info_confirmed) {
+  //     setError('يجب تأكيد صحة المعلومات');
+  //     return;
+  //   }
 
-    if (!user) {
-      setError('يجب تسجيل الدخول أولاً');
-      return;
-    }
+  //   if (!user) {
+  //     setError('يجب تسجيل الدخول أولاً');
+  //     return;
+  //   }
 
-    setLoading(true);
+  //   setLoading(true);
 
-    try {
-      const fileUrls: any = {};
+  //   try {
+  //     const fileUrls: any = {};
 
-      if (files.registration_certificate) {
-        fileUrls.registration_certificate_url = await uploadFile(
-          files.registration_certificate,
-          'documents',
-          `${user.id}/registration_certificate_${Date.now()}.pdf`
-        );
-      }
+  //     if (files.registration_certificate) {
+  //       fileUrls.registration_certificate_url = await uploadFile(
+  //         files.registration_certificate,
+  //         'documents',
+  //         `${user.id}/registration_certificate_${Date.now()}.pdf`
+  //       );
+  //     }
 
-      if (files.profession_license) {
-        fileUrls.profession_license_url = await uploadFile(
-          files.profession_license,
-          'documents',
-          `${user.id}/profession_license_${Date.now()}.pdf`
-        );
-      }
+  //     if (files.profession_license) {
+  //       fileUrls.profession_license_url = await uploadFile(
+  //         files.profession_license,
+  //         'documents',
+  //         `${user.id}/profession_license_${Date.now()}.pdf`
+  //       );
+  //     }
 
-      if (files.license_photo) {
-        fileUrls.license_photo_url = await uploadFile(
-          files.license_photo,
-          'documents',
-          `${user.id}/license_photo_${Date.now()}.pdf`
-        );
-      }
+  //     if (files.license_photo) {
+  //       fileUrls.license_photo_url = await uploadFile(
+  //         files.license_photo,
+  //         'documents',
+  //         `${user.id}/license_photo_${Date.now()}.pdf`
+  //       );
+  //     }
 
-      if (files.id_photo) {
-        fileUrls.id_photo_url = await uploadFile(
-          files.id_photo,
-          'documents',
-          `${user.id}/id_photo_${Date.now()}.pdf`
-        );
-      }
+  //     if (files.id_photo) {
+  //       fileUrls.id_photo_url = await uploadFile(
+  //         files.id_photo,
+  //         'documents',
+  //         `${user.id}/id_photo_${Date.now()}.pdf`
+  //       );
+  //     }
 
-      if (files.criminal_record) {
-        fileUrls.criminal_record_url = await uploadFile(
-          files.criminal_record,
-          'documents',
-          `${user.id}/criminal_record_${Date.now()}.pdf`
-        );
-      }
+  //     if (files.criminal_record) {
+  //       fileUrls.criminal_record_url = await uploadFile(
+  //         files.criminal_record,
+  //         'documents',
+  //         `${user.id}/criminal_record_${Date.now()}.pdf`
+  //       );
+  //     }
 
-      if (files.academic_certificate) {
-        fileUrls.academic_certificate_url = await uploadFile(
-          files.academic_certificate,
-          'documents',
-          `${user.id}/academic_certificate_${Date.now()}.pdf`
-        );
-      }
+  //     if (files.academic_certificate) {
+  //       fileUrls.academic_certificate_url = await uploadFile(
+  //         files.academic_certificate,
+  //         'documents',
+  //         `${user.id}/academic_certificate_${Date.now()}.pdf`
+  //       );
+  //     }
 
-      const { error: insertError } = await supabase
-        .from('member_registrations')
-        .insert({
-          user_id: user.id,
-          ...formData,
-          employees_total: formData.employees_land_shipping +
-            formData.employees_clearance +
-            formData.employees_sea_shipping +
-            formData.employees_air_shipping +
-            formData.employees_logistics +
-            formData.employees_express_mail +
-            formData.employees_other,
-          ...fileUrls,
-        });
+  //     const { error: insertError } = await supabase
+  //       .from('member_registrations')
+  //       .insert({
+  //         user_id: user.id,
+  //         ...formData,
+  //         employees_total: formData.employees_land_shipping +
+  //           formData.employees_clearance +
+  //           formData.employees_sea_shipping +
+  //           formData.employees_air_shipping +
+  //           formData.employees_logistics +
+  //           formData.employees_express_mail +
+  //           formData.employees_other,
+  //         ...fileUrls,
+  //       });
 
-      if (insertError) throw insertError;
+  //     if (insertError) throw insertError;
 
-      setSuccess(true);
-      setTimeout(() => {
-        navigate('/');
-      }, 3000);
-    } catch (err: any) {
-      setError(err.message || 'حدث خطأ أثناء تقديم الطلب');
-    } finally {
-      setLoading(false);
-    }
-  };
+  //     setSuccess(true);
+  //     setTimeout(() => {
+  //       navigate('/');
+  //     }, 3000);
+  //   } catch (err: any) {
+  //     setError(err.message || 'حدث خطأ أثناء تقديم الطلب');
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
 
-  if (success) {
-    return (
-      <div className="min-h-screen bg-slate-50">
-        <Navbar />
-        <div className="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl mx-auto text-center">
-            <div className="bg-white rounded-lg shadow-xl p-12">
-              <CheckCircle className="text-green-600 mx-auto mb-6" size={64} />
-              <h1 className="text-3xl font-bold text-slate-900 mb-4">
-                تم تقديم الطلب بنجاح
-              </h1>
-              <p className="text-slate-600 text-lg mb-6">
-                سيتم مراجعة طلبك والرد عليك في أقرب وقت ممكن
-              </p>
-              <p className="text-slate-500">
-                جاري توجيهك إلى الصفحة الرئيسية...
-              </p>
-            </div>
-          </div>
-        </div>
-        <Footer />
-      </div>
-    );
-  }
+  // if (success) {
+  //   return (
+  //     <div className="min-h-screen bg-slate-50">
+  //       <Navbar />
+  //       <div className="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
+  //         <div className="max-w-2xl mx-auto text-center">
+  //           <div className="bg-white rounded-lg shadow-xl p-12">
+  //             <CheckCircle className="text-green-600 mx-auto mb-6" size={64} />
+  //             <h1 className="text-3xl font-bold text-slate-900 mb-4">
+  //               تم تقديم الطلب بنجاح
+  //             </h1>
+  //             <p className="text-slate-600 text-lg mb-6">
+  //               سيتم مراجعة طلبك والرد عليك في أقرب وقت ممكن
+  //             </p>
+  //             <p className="text-slate-500">
+  //               جاري توجيهك إلى الصفحة الرئيسية...
+  //             </p>
+  //           </div>
+  //         </div>
+  //       </div>
+  //       <Footer />
+  //     </div>
+  //   );
+  // }
 
   return (
     <div className="min-h-screen bg-slate-50">
@@ -255,28 +255,36 @@ export default function Register() {
           <div className="bg-white rounded-lg shadow-xl overflow-hidden">
             <div className="bg-red-600 p-6">
               <div className="flex items-center justify-center gap-3">
-                <UserPlus className="text-white" size={32} />
+                {/* <UserPlus className="text-white" size={32} /> */}
                 <h1 className="text-3xl font-bold text-white text-center">
                   التسجيل كعضو في النقابة
                 </h1>
               </div>
               <div className="mt-6 flex items-center justify-center gap-4">
-                <div className={`flex items-center gap-2 ${step >= 1 ? 'text-white' : 'text-red-300'}`}>
-                  <div className={`w-8 h-8 rounded-full flex items-center justify-center ${step >= 1 ? 'bg-white text-red-600' : 'bg-red-400'} font-bold`}>
+                {/* ${step >= 1 ? 'text-white' : 'text-red-300'} */}
+                <div className={`flex items-center gap-2 `}>
+                  {/* ${step >= 1 ? 'bg-white text-red-600' : 'bg-red-400'} */}
+                  <div className={`w-8 h-8 rounded-full flex items-center justify-center  font-bold`}>
                     1
                   </div>
                   <span className="font-medium">إنشاء حساب</span>
                 </div>
-                <div className={`w-16 h-0.5 ${step >= 2 ? 'bg-white' : 'bg-red-400'}`} />
-                <div className={`flex items-center gap-2 ${step >= 2 ? 'text-white' : 'text-red-300'}`}>
-                  <div className={`w-8 h-8 rounded-full flex items-center justify-center ${step >= 2 ? 'bg-white text-red-600' : 'bg-red-400'} font-bold`}>
+                {/* ${step >= 2 ? 'bg-white' : 'bg-red-400'} */}
+                <div className={`w-16 h-0.5 `} />
+                {/* ${step >= 2 ? 'text-white' : 'text-red-300'} */}
+                <div className={`flex items-center gap-2 `}>
+                  {/* ${step >= 2 ? 'bg-white text-red-600' : 'bg-red-400'} */}
+                  <div className={`w-8 h-8 rounded-full flex items-center justify-center  font-bold`}>
                     2
                   </div>
                   <span className="font-medium">بيانات الشركة</span>
                 </div>
-                <div className={`w-16 h-0.5 ${step >= 3 ? 'bg-white' : 'bg-red-400'}`} />
-                <div className={`flex items-center gap-2 ${step >= 3 ? 'text-white' : 'text-red-300'}`}>
-                  <div className={`w-8 h-8 rounded-full flex items-center justify-center ${step >= 3 ? 'bg-white text-red-600' : 'bg-red-400'} font-bold`}>
+                {/* ${step >= 3 ? 'bg-white' : 'bg-red-400'} */}
+                <div className={`w-16 h-0.5 `} />
+                {/* ${step >= 3 ? 'text-white' : 'text-red-300'} */}
+                <div className={`flex items-center gap-2 `}>
+                  {/*  ${step >= 3 ? 'bg-white text-red-600' : 'bg-red-400'} */}
+                  <div className={`w-8 h-8 rounded-full flex items-center justify-center font-bold`}>
                     3
                   </div>
                   <span className="font-medium">المرفقات</span>
@@ -285,13 +293,13 @@ export default function Register() {
             </div>
 
             <div className="p-8">
-              {error && (
+              {false && (
                 <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg">
-                  <p className="text-red-600 text-sm text-center">{error}</p>
+                  <p className="text-red-600 text-sm text-center"> error text</p>
                 </div>
               )}
 
-              {step === 1 && (
+              {/* {step === 1 && (
                 <form onSubmit={handleAuthSubmit} className="space-y-6">
                   <h2 className="text-2xl font-bold text-slate-900 mb-6">إنشاء حساب</h2>
 
@@ -886,7 +894,7 @@ export default function Register() {
                     </button>
                   </div>
                 </form>
-              )}
+              )} */}
             </div>
           </div>
         </div>

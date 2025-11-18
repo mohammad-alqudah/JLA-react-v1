@@ -73,14 +73,15 @@ export default function Slider() {
         onClick={prevSlide}
         className="absolute right-4 top-1/2 -translate-y-1/2 bg-white bg-opacity-20 hover:bg-opacity-30 text-white p-3 rounded-full backdrop-blur-sm transition-all duration-200"
       >
-        <ChevronLeft size={28} />
+        <ChevronRight size={28} />
+        
       </button>
 
       <button
         onClick={nextSlide}
         className="absolute left-4 top-1/2 -translate-y-1/2 bg-white bg-opacity-20 hover:bg-opacity-30 text-white p-3 rounded-full backdrop-blur-sm transition-all duration-200"
       >
-        <ChevronRight size={28} />
+       <ChevronLeft size={28} />
       </button>
 
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex space-x-reverse space-x-3">

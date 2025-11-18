@@ -1,210 +1,176 @@
-import { Mail, Phone, MapPin, Send } from 'lucide-react';
-import { useState, FormEvent } from 'react';
 
-export default function Contact() {
+import { MapPin, Phone, Mail, Clock, Send, MessageSquare } from 'lucide-react';
+import { useState } from 'react';
+
+const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     subject: '',
-    message: '',
+    message: ''
   });
 
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
-
-  const handleSubmit = async (e: FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
-    setSubmitStatus('idle');
-
-    await new Promise(resolve => setTimeout(resolve, 1500));
-
-    setSubmitStatus('success');
-    setIsSubmitting(false);
+    // Handle form submission
+    console.log('Form submitted:', formData);
+    alert('Thank you for your message. We will get back to you soon!');
     setFormData({ name: '', email: '', subject: '', message: '' });
-
-    setTimeout(() => {
-      setSubmitStatus('idle');
-    }, 3000);
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value,
+      [e.target.name]: e.target.value
     });
   };
 
+ 
   return (
-    <section id="contact" className="py-20 bg-slate-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
-            تواصل معنا
-          </h2>
-          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-            هل لديك أسئلة؟ نحن نحب أن نسمع منك. أرسل لنا رسالة وسنرد في أقرب وقت ممكن.
-          </p>
+    <div>
+           <div className="text-center mb-3">
+           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
+ تواصل معنا
+           </h2>
+        <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+هل لديك أسئلة؟ نحن نحب أن نسمع منك. أرسل لنا رسالة وسنرد في أقرب وقت ممكن.
+        </p>
         </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <div>
-            <div className="bg-white rounded-lg shadow-lg p-8 mb-8">
-              <h3 className="text-2xl font-bold text-slate-900 mb-6">معلومات الاتصال</h3>
-
-              <div className="space-y-6">
-                <div className="flex items-start">
-                  <div className="flex-shrink-0">
-                    <div className="flex items-center justify-center h-12 w-12 rounded-lg bg-red-100 text-red-600">
-                      <MapPin size={24} />
-                    </div>
-                  </div>
-                  <div className="ml-4">
-                    <h4 className="text-lg font-semibold text-slate-900">العنوان</h4>
-                    <p className="text-slate-600">شارع الأعمال 123<br />عمان، الأردن<br />11118</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start">
-                  <div className="flex-shrink-0">
-                    <div className="flex items-center justify-center h-12 w-12 rounded-lg bg-red-100 text-red-600">
-                      <Phone size={24} />
-                    </div>
-                  </div>
-                  <div className="ml-4">
-                    <h4 className="text-lg font-semibold text-slate-900">الهاتف</h4>
-                    <p className="text-slate-600">+962 6 123 4567</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start">
-                  <div className="flex-shrink-0">
-                    <div className="flex items-center justify-center h-12 w-12 rounded-lg bg-red-100 text-red-600">
-                      <Mail size={24} />
-                    </div>
-                  </div>
-                  <div className="ml-4">
-                    <h4 className="text-lg font-semibold text-slate-900">البريد الإلكتروني</h4>
-                    <p className="text-slate-600">info@jla.org.jo</p>
-                  </div>
-                </div>
+      {/* Contact Form and Map */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12">
+            {/* Contact Form */}
+            <div className="bg-white p-8 rounded-lg shadow-lg">
+              <div className="flex items-center mb-6">
+                <MessageSquare className="h-6 w-6 text-red-600 mr-3" />
+                <h2 className="text-2xl font-bold text-gray-900">Send us a Message</h2>
               </div>
-            </div>
-
-            <div className="rounded-lg overflow-hidden shadow-lg h-80">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.15830869428!2d-74.119763973046!3d40.69766374874431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2s!4v1699564800000!5m2!1sen!2s"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Location Map"
-              />
-            </div>
-          </div>
-
-          <div>
-            <div className="bg-white rounded-lg shadow-lg p-8">
-              <h3 className="text-2xl font-bold text-slate-900 mb-6">أرسل لنا رسالة</h3>
-
+              
               <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-2">
-                    الاسم
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-red-600 focus:border-transparent transition-all duration-200 outline-none"
-                    placeholder="أحمد محمد"
-                  />
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                      Full Name *
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      required
+                      value={formData.name}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-600 focus:border-transparent"
+                      placeholder="Your full name"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                      Email Address *
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      required
+                      value={formData.email}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-600 focus:border-transparent"
+                      placeholder="your.email@example.com"
+                    />
+                  </div>
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-2">
-                    البريد الإلكتروني
+                  <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
+                    Subject *
                   </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-red-600 focus:border-transparent transition-all duration-200 outline-none"
-                    placeholder="ahmad@example.com"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-slate-700 mb-2">
-                    الموضوع
-                  </label>
-                  <input
-                    type="text"
+                  <select
                     id="subject"
                     name="subject"
+                    required
                     value={formData.subject}
                     onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-red-600 focus:border-transparent transition-all duration-200 outline-none"
-                    placeholder="كيف يمكننا مساعدتك؟"
-                  />
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-600 focus:border-transparent"
+                  >
+                    <option value="">Select a subject</option>
+                    <option value="general">General Inquiry</option>
+                    <option value="membership">Membership Information</option>
+                    <option value="training">Training Programs</option>
+                    <option value="events">Events & Conferences</option>
+                    <option value="partnership">Partnership Opportunities</option>
+                    <option value="media">Media & Press</option>
+                    <option value="other">Other</option>
+                  </select>
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-slate-700 mb-2">
-                    الرسالة
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                    Message *
                   </label>
                   <textarea
                     id="message"
                     name="message"
-                    value={formData.message}
-                    onChange={handleChange}
                     required
                     rows={6}
-                    className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-red-600 focus:border-transparent transition-all duration-200 outline-none resize-none"
-                    placeholder="أخبرنا المزيد عن استفسارك..."
-                  />
+                    value={formData.message}
+                    onChange={handleChange}
+                    className="w-full resize-none px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-600 focus:border-transparent"
+                    placeholder="Please provide details about your inquiry..."
+                  ></textarea>
                 </div>
-
-                {submitStatus === 'success' && (
-                  <div className="bg-green-50 border border-green-200 text-green-700 px-4 py-3 rounded-lg">
-                    تم إرسال الرسالة بنجاح! سنعاود الاتصال بك قريباً.
-                  </div>
-                )}
-
-                {submitStatus === 'error' && (
-                  <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg">
-                    حدث خطأ ما. يرجى المحاولة مرة أخرى.
-                  </div>
-                )}
 
                 <button
                   type="submit"
-                  disabled={isSubmitting}
-                  className="w-full bg-green-600 hover:bg-green-700 text-white font-medium py-3 px-6 rounded-lg transition-colors duration-200 flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full bg-red-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-red-700 transition-colors inline-flex items-center justify-center"
                 >
-                  {isSubmitting ? (
-                    'جاري الإرسال...'
-                  ) : (
-                    <>
-                      إرسال الرسالة
-                      <Send size={18} className="mr-2" />
-                    </>
-                  )}
+                  <Send className="h-5 w-5 mr-2" />
+                  Send Message
                 </button>
               </form>
             </div>
+
+            {/* Map and Additional Info */}
+            <div className="space-y-8">
+              {/* Department Contacts */}
+              <div className="bg-white p-8 rounded-lg shadow-lg">
+                <h3 className="text-xl font-semibold mb-4">Contact Information</h3>
+                <div className="space-y-3">
+                  
+                    <div  className=" flex justify-between items-center py-2 border-b border-gray-100 last:border-b-0">
+                      <span className="text-gray-700">Phone Number:</span>
+                      <span className="text-red-600 hover:text-red-700 text-sm">
+                        00962-6-5658094
+                      </span>
+                    </div>
+                    <div  className=" flex justify-between items-center py-2 border-b border-gray-100 last:border-b-0">
+                      <span className="text-gray-700">email :</span>
+                      <span className="text-red-600 hover:text-red-700 text-sm">
+                        info@jla.jo
+                      </span>
+                    </div>
+                 
+                </div>
+              </div>
+                {/* Map Placeholder */}
+              <div className="bg-white p-8 rounded-lg shadow-lg">
+                <h3 className="text-xl font-semibold mb-4">Our Location</h3>
+                <div className="bg-gray-200 rounded-lg h-64 flex items-center justify-center mb-4 overflow-hidden">
+                 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1692.0779316010846!2d35.898973!3d31.98379!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151ca118a33aadcb%3A0xf7d86619c29b3cc3!2sJordanian%20Logistics%20Association!5e0!3m2!1sen!2sjo!4v1763403486012!5m2!1sen!2sjo" width={600} height={450} style={{border: 0}} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" />
+
+                </div>
+
+                <div className="space-y-2 text-sm text-gray-600">
+                  <p><strong>Address:</strong> Shmeissani, Yousef Bin Tashfeen Str., Bldg.18</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+     
+    </div>
   );
-}
+};
+
+export default Contact;

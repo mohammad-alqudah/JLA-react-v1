@@ -1,11 +1,11 @@
 import { Menu, X, LogIn, UserPlus, LogOut, User } from 'lucide-react';
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { useAuth } from '../contexts/AuthContext';
+// import { useAuth } from '../contexts/AuthContext';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const { user, signOut } = useAuth();
+  // const { user, signOut } = useAuth();
   const location = useLocation();
 
   const navItems = ['الرئيسية', 'الدورات', 'الأخبار', 'اتصل بنا'];
@@ -29,7 +29,7 @@ export default function Navbar() {
   };
 
   const handleSignOut = async () => {
-    await signOut();
+    // await signOut();
     window.location.href = '/';
   };
 
@@ -54,7 +54,7 @@ export default function Navbar() {
               ))}
             </div>
             <div className="flex items-center gap-2 mr-4">
-              {user ? (
+              {/* {user ? (
                 <div className="flex items-center gap-2">
                   <div className="flex items-center gap-2 px-3 py-2 bg-slate-100 rounded-lg">
                     <User size={18} className="text-slate-600" />
@@ -85,7 +85,7 @@ export default function Navbar() {
                     <span>التسجيل كعضو</span>
                   </Link>
                 </>
-              )}
+              )} */}
             </div>
           </div>
 
@@ -113,12 +113,12 @@ export default function Navbar() {
               </button>
             ))}
             <div className="border-t pt-2 space-y-2">
-              {user ? (
+              {false ? (
                 <>
                   <div className="px-3 py-2 bg-slate-100 rounded-lg">
                     <div className="flex items-center gap-2">
                       <User size={18} className="text-slate-600" />
-                      <span className="text-sm text-slate-600">{user.email}</span>
+                      <span className="text-sm text-slate-600">{/*user.email*/}</span>
                     </div>
                   </div>
                   <button

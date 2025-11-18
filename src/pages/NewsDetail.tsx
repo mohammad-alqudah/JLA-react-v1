@@ -11,7 +11,7 @@ export default function NewsDetail() {
 
   if (!news) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
+      <div className="min-h-screen flex items-center justify-center ">
         <div className="text-center">
           <h1 className="text-4xl font-bold text-slate-900 mb-4">الخبر غير موجود</h1>
           <Link to="/" className="text-red-600 hover:text-red-700">
