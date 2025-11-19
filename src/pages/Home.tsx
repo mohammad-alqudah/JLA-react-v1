@@ -9,14 +9,17 @@ import Letter from '../components/Letter';
 
 export default function Home() {
   return (
-    <div className="min-h-screen">
-      <Navbar />
-      <Slider />
-      <Letter />
-      <News />
-      <Courses />
-      <Contact />
-      <Footer />
-    </div>
+   <>
+        <Navbar />
+       <div className='container mx-auto'>
+          <Slider />
+          <Letter />
+          <News />
+          <Courses />
+          <Contact />
+       </div>
+        <Footer />
+      
+   </>
   );
 }

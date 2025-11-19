@@ -19,48 +19,7 @@ export default function News() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {newsItems.slice(0, 3).map((article, index) => (
-            // <Link
-            //   key={item.id}
-            //   to={`/news/${item.id}`}
-            //   className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group block"
-            // >
-            //   <div className="relative h-48 overflow-hidden rounded-t-lg">
-            //     <img
-            //       src={item.image}
-            //       alt={item.title}
-            //       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-            //     />
-            //     <div className="absolute top-4 right-4">
-            //       <span className="bg-red-600 text-white px-3 py-1 rounded-full text-sm font-medium">
-            //         {item.category}
-            //       </span>
-            //     </div>
-            //   </div>
-
-            //   <div className="p-6 bg-white">
-            //     <div className="flex items-center text-slate-500 text-sm mb-3">
-            //       <Calendar size={16} className="ml-2" />
-            //       <span>{new Date(item.date).toLocaleDateString('ar-JO', {
-            //         year: 'numeric',
-            //         month: 'long',
-            //         day: 'numeric'
-            //       })}</span>
-            //     </div>
-
-            //     <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-red-600 transition-colors duration-200">
-            //       {item.title}
-            //     </h3>
-
-            //     <p className="text-slate-600 mb-4 line-clamp-3">
-            //       {item.excerpt}
-            //     </p>
-
-            //     <div className="flex items-center text-red-600 font-medium hover:text-red-700 transition-colors duration-200">
-            //       اقرأ المزيد
-            //       <ArrowRight size={18} className="mr-2 group-hover:-translate-x-1 transition-transform duration-200" />
-            //     </div>
-            //   </div>
-            // </Link>
+   
             <article key={index} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
                 <img
                   src={article.image}

@@ -5,8 +5,8 @@ import { useTranslation } from 'react-i18next';
 export default function LogisticsUnion() {
   const { t } = useTranslation();
   return (
-    <div className="min-h-screen bg-gradient-to-br  from-gray-50 to-gray-100 py-16 px-4" dir="rtl">
-      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 grid-cols-1 gap-2">
+    <div className=" bg-gradient-to-br  from-gray-50 to-gray-100 py-16 px-4 " >
+      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 grid-cols-1 gap-10">
       <div  >
           {/* Header */}
         <h1 className="text-xl md:text-4xl font-bold text-gray-900 text-center mb-5">
@@ -30,32 +30,39 @@ export default function LogisticsUnion() {
 
       </div>
         {/* Three Column Grid */}
-        <div>
-            <div className="grid md:grid-cols-2 gap-8 justify-center items-center">
-              {/* Vision Card */}
-              <div >
-                <div className="flex justify-center mb-6">
-                  <div className="w-16 h-16  flex items-center justify-center">
-                    <Package className="w-8 h-8 text-red-600" />
-                  </div>
-                </div>
-                <h2 className="text-2xl font-bold text-gray-900 text-center mb-4">
-              {t('view')}                </h2>
-                <p className="text-gray-700 leading-relaxed text-center  w-80 mx-auto">{t('vision_description')}  </p>
-              </div>
-    
-              {/* Mission Card */}
-              <div >
-                <div className="flex justify-center mb-6">
-                  <div className="w-16 h-16 flex items-center justify-center">
-                    <FileText className="w-8 h-8 text-red-600" />
-                  </div>
-                </div>
-                <h2 className="text-2xl font-bold text-gray-900 text-center mb-4">
-             {t('mission')}                </h2>
-                <p className="text-gray-700 leading-relaxed text-center  w-80 mx-auto">{t('mission_description')}  </p>
-              </div>
-    
+        <div className="space-y-8">
+            <div className="grid md:grid-cols-2 grid-cols-1 gap-8 justify-center items-center">
+
+         <div className='col-span-2'>
+             <div className='grid md:grid-cols-2 grid-cols-1 gap-5'>
+               
+                    {/* Vision Card */}
+                    <div>
+                      <div className="flex justify-center mb-6">
+                        <div className="w-16 h-16  flex items-center justify-center">
+                          <Package className="w-8 h-8 text-red-600" />
+                        </div>
+                      </div>
+                      <h2 className="text-2xl font-bold text-gray-900 text-center mb-4">
+                    {t('view')}                </h2>
+                      <p className="text-gray-700 leading-relaxed text-center  w-80 mx-auto">{t('vision_description')}  </p>
+                    </div>
+          
+                    {/* Mission Card */}
+                    <div>
+                      <div className="flex justify-center mb-6">
+                        <div className="w-16 h-16 flex items-center justify-center">
+                          <FileText className="w-8 h-8 text-red-600" />
+                        </div>
+                      </div>
+                      <h2 className="text-2xl font-bold text-gray-900 text-center mb-4">
+                   {t('mission')}                </h2>
+                      <p className="text-gray-700 leading-relaxed text-center  w-80 mx-auto">{t('mission_description')}  </p>
+                    </div>
+          
+         </div>
+             
+           </div>
               {/* Strategic Goals Card */}
               <div className='col-span-2'>
                 <div className="flex justify-center mb-6  ">
@@ -65,7 +72,7 @@ export default function LogisticsUnion() {
                 </div>
                 <h2 className="text-2xl font-bold text-gray-900 text-center mb-4">
                 {t('values')}        </h2>
-                <p className="text-gray-700 leading-relaxed text-center w-80 mx-auto">{t('values_description')}</p>
+                <p className="text-gray-700 leading-relaxed text-center lg:w-80 mx-auto">{t('values_description')}</p>
               </div>
             </div>
         </div>
