@@ -227,7 +227,7 @@ const Header = () => {
   ];
 
   const moreNavigation = [
-    { name: 'header.news', href: '/news' },
+    { name: 'header.news', href: '/all-news' },
     { name: 'header.contact', href: '/contact' },
     { name: 'header.partnerships', href: '/partnerships' },
   ];
@@ -235,8 +235,8 @@ const Header = () => {
       { name: 'header.home', href: '/' },
     { name: 'header.about', href: '/about' },
     { name: 'header.services', href: '/services' },
- { name: 'header.news', href: '/news' },
-    { name: 'header.contact', href: '/#contact' },
+    { name: 'header.news', href: '/all-news' },
+    { name: 'header.contact', href: '/contact' },
     { name: 'header.partnerships', href: '/partnerships' },
    
   ];
@@ -292,7 +292,7 @@ const Header = () => {
               <Link
                 key={item.name}
                 to={item.href}
-                className={`px-3 py-2 text-sm font-medium transition-colors ${
+                className={`px-2 py-2 text-xs  font-medium transition-colors ${
                   isActive(item.href)
                     ? 'text-red-600 border-b-2 border-red-600'
                     : 'text-gray-700 hover:text-red-600'
