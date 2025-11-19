@@ -1,6 +1,9 @@
 {
       "welcome": "Welcome to React and react-i18next"
        ,
+      "view all courses":"View all courses",
+      "view all news":"View all news",
+      "register now":"Register now",
       "contact": "Contact us",
       "contact_message": "Have questions? We love to hear from you. Send us a message and we'll get back to you as soon as possible.",
       "ourcourses": "Our Training Courses",
@@ -96,6 +99,10 @@
     "logging_in": "Logging in...",
     "no_account": "Don't have an account?",
     "register_link": "Register as a member"
+  },
+   "news_page": {
+    "title": "All News",
+    "subtitle": "Browse all our news and stay updated with the latest developments and achievements"
   }
 
 

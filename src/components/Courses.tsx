@@ -113,7 +113,7 @@ export default function Courses() {
 
                 <button className="w-full bg-red-600 hover:bg-red-700 text-white font-medium py-3 px-6 rounded-lg transition-colors duration-200 flex items-center justify-center">
                   <BookOpen size={18} className="ml-2" />
-                  سجل الآن
+                  {t('register now')}
                 </button>
               </div>
             </article>
@@ -122,7 +122,7 @@ export default function Courses() {
 
         <div className="text-center mt-12">
           <button className="inline-flex items-center bg-red-600 hover:bg-red-700 text-white font-medium py-3 px-8 rounded-lg transition-colors duration-200">
-            عرض جميع الدورات
+            {t('view all courses')}
             <BookOpen size={20} className="mr-2" />
           </button>
         </div>

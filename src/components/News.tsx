@@ -92,7 +92,7 @@ export default function News() {
             to="/all-news"
             className="inline-flex items-center bg-red-600 hover:bg-red-700 text-white font-medium py-3 px-8 rounded-lg transition-colors duration-200"
           >
-            عرض جميع الأخبار
+            {t('view all news')}
             <ArrowRight size={20} className="mr-2" />
           </Link>
         </div>

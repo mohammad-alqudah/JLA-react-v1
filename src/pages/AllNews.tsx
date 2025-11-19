@@ -4,8 +4,10 @@ import { Calendar, Search, ArrowRight, Filter } from 'lucide-react';
 import { newsItems } from '../data/newsData';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import { useTranslation } from 'react-i18next';
 
 export default function AllNews() {
+  const { t } = useTranslation();
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string>('الكل');
 
@@ -31,10 +33,10 @@ export default function AllNews() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
-              جميع الأخبار
+              {t('news_page.title')}
             </h1>
             <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-              تصفح جميع أخبارنا وابق على اطلاع بآخر المستجدات والإنجازات
+              {t('news_page.subtitle')}
             </p>
           </div>
 
