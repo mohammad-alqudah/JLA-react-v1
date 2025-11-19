@@ -223,22 +223,26 @@ const Header = () => {
  const navigation = [
     { name: 'header.home', href: '/' },
     { name: 'header.about', href: '/about' },
-    { name: 'header.services', href: '/services' },
+    { name: 'FIATA', href: '/fiata' },
   ];
 
   const moreNavigation = [
+    { name: 'FIATA Diploma', href: '/fiata-diploma' },
+    { name: 'Experts', href: '/experts' },
+    { name: 'FAQs', href: '/faqs' },
     { name: 'header.news', href: '/all-news' },
+    { name: 'Media Centre', href: '/media-centre' },
     { name: 'header.contact', href: '/contact' },
-    { name: 'header.partnerships', href: '/partnerships' },
   ];
   const allNavigation = [
-      { name: 'header.home', href: '/' },
+    { name: 'header.home', href: '/' },
     { name: 'header.about', href: '/about' },
-    { name: 'header.services', href: '/services' },
+    { name: 'FIATA', href: '/fiata' },
+    { name: 'FIATA Diploma', href: '/fiata-diploma' },
+    { name: 'Experts', href: '/experts' },
+    { name: 'FAQs', href: '/faqs' },
     { name: 'header.news', href: '/all-news' },
     { name: 'header.contact', href: '/contact' },
-    { name: 'header.partnerships', href: '/partnerships' },
-   
   ];
 
 
