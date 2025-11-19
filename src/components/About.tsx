@@ -1,8 +1,9 @@
 import { Package, FileText, Shield, Target } from 'lucide-react';
+import aboutBg from '@/assets/about-bg.jpg'
 
 export default function About() {
   return (
-    <section className="py-20 bg-gradient-to-b from-slate-50 to-white">
+    <section className={`py-20  bg-cover bg-center`} style={{ backgroundImage: `url(${aboutBg})` }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">

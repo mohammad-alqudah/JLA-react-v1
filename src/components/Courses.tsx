@@ -1,5 +1,8 @@
 import { BookOpen, Clock, Users, Award } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import course1 from '../assets/contact_1.jpeg';
+import course2 from '../assets/contact_2.jpeg';
+import course3 from '../assets/contact_3.jpeg';
 
 const courses = [
   {
@@ -80,7 +83,7 @@ export default function Courses() {
             >
               <div className="relative h-48 overflow-hidden">
                 <img
-                  src={course.image}
+                  src={course.id === 1 ? course1 : course.id === 2 ? course2 : course3}
                   alt={course.title}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />

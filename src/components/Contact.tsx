@@ -29,7 +29,7 @@ const Contact = () => {
 
  
   return (
-    <div>
+    <section id="contact">
            <div className="text-center mb-3">
            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
  {t('contact')}
@@ -40,7 +40,7 @@ const Contact = () => {
         </div>
       {/* Contact Form and Map */}
       
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gray-50" id="contact" >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 grid-cols-1 gap-12">
             {/* Contact Form */}
@@ -172,7 +172,7 @@ const Contact = () => {
         </div>
       </section>
      
-    </div>
+    </section>
   );
 };
 

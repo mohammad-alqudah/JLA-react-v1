@@ -1,6 +1,10 @@
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import bg1 from '../assets/bg1.jpg'
+import bg2 from '../assets/bg2.jpeg'
+import bg3 from '../assets/bg3.jpg'
+import bg4 from '../assets/bg4.jpg'
 
 
 export default function Slider() {
@@ -8,22 +12,28 @@ export default function Slider() {
   const { t } = useTranslation();
   
 const slides = [
-  {
-    id: 1,
-    title:t('slide1_title') ,
-    description: t('slide1_description'),
-    image: 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop',
-  },
-  {
+    {
+      id: 1,
+      title:"النقابة اللوجستية الاردنية" ,
+      description: "نسعى للارتقاء بصناعة الشحن في الاردن",
+      image: bg1,
+    },
+    {
+      id: 1,
+      title:t('slide1_title') ,
+      description: t('slide1_description'),
+      image: bg4,
+    },
+    {
     id: 2,   title:t('slide2_title') ,
     description: t('slide2_description'),
-    image: 'https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop',
+    image: bg2,
   },
   {
     id: 3,
     title: t('slide3_title') ,
     description: t('slide3_description'),
-    image: 'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop',
+    image: bg3,
   },
 ];
 

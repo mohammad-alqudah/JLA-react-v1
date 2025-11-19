@@ -1,4 +1,4 @@
-import { Calendar, ArrowRight } from 'lucide-react';
+import { Calendar, ArrowRight, ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { newsItems } from '../data/newsData';
 import { useTranslation } from 'react-i18next';
@@ -39,7 +39,7 @@ export default function News() {
                     to="/news"
                     className="text-red-600 font-medium hover:text-red-700 inline-flex items-center"
                   >
-                    Read More <ArrowRight className="ml-1 h-4 w-4" />
+                    {t('Read More')} <ArrowLeft className="ml-1 h-4 w-4" />
                   </Link>
                 </div>
               </article>
@@ -52,7 +52,7 @@ export default function News() {
             className="inline-flex items-center bg-red-600 hover:bg-red-700 text-white font-medium py-3 px-8 rounded-lg transition-colors duration-200"
           >
             {t('view all news')}
-            <ArrowRight size={20} className="mr-2" />
+            <ArrowLeft size={20} className="mr-2" />
           </Link>
         </div>
       </div>
