@@ -32,7 +32,7 @@
       "home": "Home",
       "news": "News",
       "contactUs": "Contact Us",
-      "footer": "Advancing Jordan's logistics sector through professional development, industry standards, and collaborative partnerships.",
+      "footer.footer": "Advancing Jordan's logistics sector through professional development, industry standards, and collaborative partnerships.",
       "Our Mission": "مهمتنا",
     "Our Vision": "رؤيتنا",
     "To advance the logistics industry in Jordan through professional development, industry standards, and collaborative partnerships that drive economic growth.": "الارتقاء بقطاع الخدمات اللوجستية في الأردن من خلال التطوير المهني والمعايير الصناعية والشراكات التعاونية التي تعزز النمو الاقتصادي.",
@@ -127,7 +127,15 @@
     "title": "FIATA Diploma in Freight Forwarding",
     "description": "The Jordanian Logistics Association (JLA) offers the globally recognized FIATA Diploma in Freight Forwarding, the world's leading qualification for logistics and transport professionals."
   },  
-  "Read More": "Read More"
+  "Read More": "Read More",
+  "footer": {
+    "Quick Links": "Quick Links",
+    "home": "Home",
+    "aboutUs": "About Us",
+    "news": "News",
+    "signIn": "Sign In",
+    "register": "Register"
+  }
   
 
 }

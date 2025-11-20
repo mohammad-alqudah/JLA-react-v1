@@ -83,7 +83,7 @@ const slides = [
 
       <button
         onClick={prevSlide}
-        className="absolute right-4 top-1/2 -translate-y-1/2 bg-white bg-opacity-20 hover:bg-opacity-30 text-white p-3 rounded-full backdrop-blur-sm transition-all duration-200"
+        className="hidden md:block absolute right-4 top-1/2 -translate-y-1/2 bg-white bg-opacity-20 hover:bg-opacity-30 text-white p-3 rounded-full backdrop-blur-sm transition-all duration-200"
       >
         <ChevronRight size={28} />
         
@@ -91,7 +91,7 @@ const slides = [
 
       <button
         onClick={nextSlide}
-        className="absolute left-4 top-1/2 -translate-y-1/2 bg-white bg-opacity-20 hover:bg-opacity-30 text-white p-3 rounded-full backdrop-blur-sm transition-all duration-200"
+        className="hidden md:block absolute left-4 top-1/2 -translate-y-1/2 bg-white bg-opacity-20 hover:bg-opacity-30 text-white p-3 rounded-full backdrop-blur-sm transition-all duration-200"
       >
         <ChevronLeft size={28} />
         

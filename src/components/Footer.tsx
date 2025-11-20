@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { MapPin, Phone, Mail, Facebook, Twitter, Linkedin, X, Instagram } from 'lucide-react';
 import { t, use } from 'i18next';
 import { useTranslation } from 'react-i18next';
+import logo from '../assets/logo.jpeg';
 
 export default function Footer() {
   const { t } = useTranslation();
@@ -13,17 +14,18 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-3 mb-4">
               <img 
-                src="/logo (1).png" 
+                src={logo}
                 alt="Jordanian Logistics Association" 
-                className="h-10 w-auto"
+                className="h-11 w-11 object-cover rounded-full"
               />
               <div className='px-2'>
-                <h3 className="text-lg font-bold">Jordanian Logistics Association</h3>
-                <p className="text-sm text-gray-400">النقابة اللوجستية الأردنية</p>
+                <h3 className="text-lg font-bold">{t('header.associationName')}</h3>
+    
+                <p className="text-sm text-gray-400">{t('header.associationArabic')}</p>
               </div>
             </div>
             <p className="text-gray-300 mb-4 max-w-md">
-              {t('footer')}
+              {t('footer.footer')}
             </p>
             <div className="flex items-center gap-5">
               <a href="#" className="text-gray-400 hover:text-white transition-colors">
@@ -40,31 +42,31 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">{t('Quick Links')}</h4>
+            <h4 className="text-lg font-semibold mb-4">{t('footer.Quick Links')}</h4>
             <ul className="space-y-2">
               <li>
               <li>
                 <Link to="/" className="text-gray-300 hover:text-white transition-colors">
-                  {t('home')}
+                  {t('footer.home')}
                 </Link>
               </li>
                 <Link to="/about" className="text-gray-300 hover:text-white transition-colors">
-                  {t('aboutUs')}
+                  {t('footer.aboutUs')}
                 </Link>
               </li>
               <li>
                 <Link to="/all-news" className="text-gray-300 hover:text-white transition-colors">
-                  {t('news')}
+                  {t('footer.news')}
                 </Link>
               </li>
               <li>
                 <Link to="/login" className="text-gray-300 hover:text-white transition-colors">
-                  {t(' Login')}
+                  {t('footer.signIn')}
                 </Link>
               </li>
               <li>
                 <Link to="/register" className="text-gray-300 hover:text-white transition-colors">
-                  {t('Register')}
+                  {t('footer.register')}
                 </Link>
               </li>
             </ul>
@@ -83,7 +85,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="h-5 w-5 text-red-500 flex-shrink-0" />
-                <p className="text-gray-300">+962 6 123 4567</p>
+                <p className="text-gray-300">9626123456+</p>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-red-500 flex-shrink-0" />
