@@ -99,7 +99,7 @@ export default function Courses() {
                   {course.title}
                 </h3>
 
-                <p className="text-slate-600 mb-4 line-clamp-3">
+                <p className="text-slate-600 mb-4 line-clamp-3 h-12">
                   {course.description}
                 </p>
 
