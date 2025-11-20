@@ -1,4 +1,4 @@
-import React from 'react';
+
 import fiata from '../assets/fiata-removebg-preview.png';
 import { useTranslation } from 'react-i18next';
 
@@ -7,7 +7,7 @@ export default function Fiata() {
   return (
     <div>
         <div className="text-center mb-16">
-            <div className="inline-flex items-center justify-center w-20 h-20 bg-blue-100 rounded-full mb-6">
+            <div className="inline-flex items-center justify-center w-20 h-20 bg-blue-200 rounded-full mb-6">
                <img
                     src={fiata}
                     alt="FIATA - International  Federation of Freight Forwarders Associations"
