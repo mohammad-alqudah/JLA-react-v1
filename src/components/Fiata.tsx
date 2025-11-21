@@ -99,7 +99,7 @@ export default function Fiata() {
           </div>
         </div>
 
-        <div className={`grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16 ${isRTL ? 'rtl' : 'ltr'}`}>
+        {/* <div className={`grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16 ${isRTL ? 'rtl' : 'ltr'}`}>
           {highlights.map((item, index) => (
             <div
               key={index}
@@ -116,9 +116,9 @@ export default function Fiata() {
               </p>
             </div>
           ))}
-        </div>
+        </div> */}
 
-        <div className={`bg-gradient-to-r from-blue-600 via-blue-700 to-indigo-700 rounded-2xl shadow-2xl p-8 md:p-12 ${isRTL ? 'rtl' : 'ltr'}`}>
+        {/* <div className={`bg-gradient-to-r from-blue-600 via-blue-700 to-indigo-700 rounded-2xl shadow-2xl p-8 md:p-12 ${isRTL ? 'rtl' : 'ltr'}`}>
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="text-white">
               <h3 className="text-3xl font-bold mb-6">
@@ -171,9 +171,9 @@ export default function Fiata() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
-        <div className={`mt-12 grid md:grid-cols-3 gap-6 ${isRTL ? 'rtl' : 'ltr'}`}>
+        {/* <div className={`mt-12 grid md:grid-cols-3 gap-6 ${isRTL ? 'rtl' : 'ltr'}`}>
           <Link
             to="/faqs"
             className="group bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all border-l-4 border-green-500"
@@ -220,7 +220,7 @@ export default function Fiata() {
               {isRTL ? 'اقرأ الآن' : 'Read Now'} <ExternalLink className="w-4 h-4" />
             </span>
           </a>
-        </div>
+        </div> */}
       </div>
     </section>
   );
