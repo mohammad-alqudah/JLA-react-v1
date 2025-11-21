@@ -1,3 +1,6 @@
+import newImg1 from "../assets/new5.jpg"
+import newImg3 from "../assets/new3.jpg"
+import newImg4 from "../assets/new4.jpg"
 export interface NewsItem {
   id: number;
   title: string;
@@ -34,7 +37,7 @@ export const newsItems: NewsItem[] = [
       <p>نتطلع إلى مواصلة هذا النجاح وتقديم المزيد من الابتكارات في المستقبل القريب.</p>
     `,
     date: '2025-11-10',
-    image: 'https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop',
+    image: newImg1,
     category: 'منتجات',
     author: 'أحمد الخطيب',
   },
@@ -62,7 +65,7 @@ export const newsItems: NewsItem[] = [
       <p>هذا التقدير يحفزنا على مضاعفة جهودنا لخدمة القطاع اللوجستي في الأردن والمنطقة العربية.</p>
     `,
     date: '2025-11-08',
-    image: 'https://images.pexels.com/photos/3184298/pexels-photo-3184298.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop',
+    image: newImg3,
     category: 'جوائز',
     author: 'سارة المومني',
   },
@@ -96,7 +99,7 @@ export const newsItems: NewsItem[] = [
       <p>هذه الخطوة تؤكد التزام النقابة بأن تكون الشريك اللوجستي الأول على المستوى العالمي.</p>
     `,
     date: '2025-11-05',
-    image: 'https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop',
+    image: newImg4,
     category: 'أعمال',
     author: 'خالد الزعبي',
   },

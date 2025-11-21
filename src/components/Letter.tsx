@@ -8,7 +8,7 @@ export default function LogisticsUnion() {
   return (
    <>
       <div className=" px-10">
-        <div className={`bg-auto bg-repeat md:bg-cover bg-center py-12 bg-letter bg-blend-lighten bg-white/70 `}  >
+        <div className={`bg-cover bg-center py-12 bg-letter bg-blend-lighten bg-white/70 bg-no-repeat`}  >
           <div className="max-w-7xl mx-auto grid lg:grid-cols-2 grid-cols-1 gap-10">
           <div  >
               {/* Header */}

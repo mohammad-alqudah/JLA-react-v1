@@ -12,8 +12,8 @@ export default function Home() {
   return (
    <>
         <Navbar />
-       <div className='container mx-auto'>
           <Slider />
+       <div className='container mx-auto'>
           <Letter />
           <News />
           <Fiata/>

@@ -37,8 +37,22 @@ html {
 }
   .bg-letter {
     background-image: url('../src/assets/about-bg.jpg');
-    background-size: auto;
+    background-size: cover;
     background-position: center;
-   
-    
+    background-repeat: no-repeat;
+  }
+
+  @media (max-width: 768px) {
+    .bg-letter {
+      background-size: cover;
+      background-position: center top;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .bg-letter {
+      background-size: contain;
+      background-position: center top;
+      background-repeat: no-repeat;
+    }
   }

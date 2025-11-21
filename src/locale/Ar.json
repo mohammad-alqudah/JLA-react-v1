@@ -1,4 +1,6 @@
 {
+    "contact_us": "اتصل بنا",
+
       "welcome": "مرحبًا بك في React و react-i18next" ,
       "contact": "اتصل بنا",
       "contact_message": "هل لديك أسئلة؟ نحن نحب أن نسمع منك. أرسل لنا رسالة وسنرد في أقرب وقت ممكن.",
@@ -132,7 +134,10 @@
     "more": "المزيد",
     "logout": "تسجيل خروج",
     "associationName": "النقابة اللوجستية الأردنية",
-    "associationArabic": "Jordanian Logistics Association"
+    "associationArabic": "Jordanian Logistics Association",
+    "Experts":"المستشارون",
+    "FAQs":"الأسئلة الشائعة",
+    "FIATA Diploma":"دبلومFIATA"
   },
 "fiata": {
     "title": "دبلوم FIATA في التخليص والشحن",

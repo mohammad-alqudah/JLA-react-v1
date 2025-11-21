@@ -1,4 +1,5 @@
 {
+  "contact_us": "Contact Us",
       "welcome": "Welcome to React and react-i18next"
        ,
       "view all courses":"View all courses",
@@ -85,6 +86,7 @@
     },
     "send": "Send Message",
     "location_title": "Association Location",
+    "contact_info_title": "Contact Information",
     "address_label": "Address:",
     "address_value": "Shmeissani, Yousef Bin Tashfeen Str., Bldg.18"
   
@@ -121,7 +123,10 @@
     "more": "More",
     "logout": "Logout",
     "associationName": "Jordanian Logistics Association",
-    "associationArabic": "النقابة اللوجستية الأردنية"
+    "associationArabic": "النقابة اللوجستية الأردنية",
+    "Experts": "Experts",
+    "FAQs": "FAQs",
+    "FIATA Diploma": "FIATA Diploma"
   },
   "fiata": {
     "title": "FIATA Diploma in Freight Forwarding",

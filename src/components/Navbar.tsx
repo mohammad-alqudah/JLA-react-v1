@@ -43,9 +43,9 @@ const Header = () => {
     { name: 'header.home', href: '/' },
     { name: 'header.about', href: '/about' },
     { name: 'FIATA', href: '/fiata' },
-    { name: 'FIATA Diploma', href: '/fiata-diploma' },
-    { name: 'Experts', href: '/experts' },
-    { name: 'FAQs', href: '/faqs' },
+    { name: 'header.FIATA Diploma', href: '/fiata-diploma' },
+    { name: 'header.Experts', href: '/experts' },
+    { name: 'header.FAQs', href: '/faqs' },
     { name: 'header.news', href: '/all-news' },
     { name: 'header.contact', href: '/contact' },
   ];
@@ -77,7 +77,10 @@ const Header = () => {
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3">
-            <img src={logo} alt={t("header.associationName")} className="h-12 w-auto" />
+           <div className="flex flex-col items-center justify-center">
+             <img src={logo} alt={t("header.associationName")} className="h-12 w-auto" />
+             <p className="text-[10px] font-semibold text-gray-500 visible sm:hidden"> {t("header.associationName")}</p>
+             </div>
             <div className="hidden sm:block">
               <h1 className="text-lg md:text-xs lg:text-sm font-semibold text-gray-900"> 
                 {t("header.associationName")}
