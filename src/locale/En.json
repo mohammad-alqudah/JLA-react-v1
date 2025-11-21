@@ -126,7 +126,10 @@
     "associationArabic": "النقابة اللوجستية الأردنية",
     "Experts": "Experts",
     "FAQs": "FAQs",
-    "FIATA Diploma": "FIATA Diploma"
+    "FIATA Diploma": "FIATA Diploma",
+    "mediaCentre":"Media Centre",
+    "contact":"Contact"
+  
   },
   "fiata": {
     "title": "FIATA Diploma in Freight Forwarding",

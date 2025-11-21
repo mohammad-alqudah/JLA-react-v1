@@ -32,11 +32,11 @@ const Header = () => {
   ];
 
   const moreNavigation = [
-    { name: 'FIATA Diploma', href: '/fiata-diploma' },
-    { name: 'Experts', href: '/experts' },
-    { name: 'FAQs', href: '/faqs' },
+    { name: 'header.FIATA Diploma', href: '/fiata-diploma' },
+    { name: 'header.Experts', href: '/experts' },
+    { name: 'header.FAQs', href: '/faqs' },
     { name: 'header.news', href: '/all-news' },
-    { name: 'Media Centre', href: '/media-centre' },
+    { name: 'header.mediaCentre', href: '/media-centre' },
     { name: 'header.contact', href: '/contact' },
   ];
   const allNavigation = [
@@ -47,6 +47,7 @@ const Header = () => {
     { name: 'header.Experts', href: '/experts' },
     { name: 'header.FAQs', href: '/faqs' },
     { name: 'header.news', href: '/all-news' },
+    { name: 'header.mediaCentre', href: '/media-centre' },
     { name: 'header.contact', href: '/contact' },
   ];
 

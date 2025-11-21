@@ -41,8 +41,14 @@ html {
     background-position: center;
     background-repeat: no-repeat;
   }
+   .bg-Vertical {
+    background-image: url("../src/assets/vr-photo.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
 
-  @media (max-width: 768px) {
+  /* @media (max-width: 768px) {
     .bg-letter {
       background-size: cover;
       background-position: center top;
@@ -55,4 +61,4 @@ html {
       background-position: center top;
       background-repeat: no-repeat;
     }
-  }
+  } */
